@@ -1,23 +1,19 @@
-import React, { Component } from "react"
+import React from "react"
+import { NavLink } from 'react-router-dom'
 
 const NavBar = () =>{
   return(
-    <div className="ui menu container">
-      <div className="header item">
-        Our Company
+    <div className="ui menu fixed">
+      <div className="ui container">
+        <NavLink className="header item" to="/">
+          Our Company
+        </ NavLink>
+        <NavLink className="header item" to="/form">
+          Form
+        </ NavLink>
       </div>
-      <a className="item">
-        About Us
-      </a>
-      <a className="item">
-        Jobs
-      </a>
-      <a className="item">
-        Locations
-      </a>
     </div>
   )
-
 }
 
 export default NavBar

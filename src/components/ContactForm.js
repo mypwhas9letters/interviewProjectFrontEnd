@@ -16,6 +16,7 @@ class ContactForm extends Component {
     event.preventDefault()
     console.log(this.state)
   }
+
   onChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
@@ -96,7 +97,7 @@ class ContactForm extends Component {
           </select>
         </div>
         <button type="submit" className="ui primary button">Submit</button>
-        </form>
+      </form>
     )
   }
 }
