@@ -7,6 +7,7 @@ class ContactForm extends Component {
     this.state = {
       firstName: "",
       lastName: "",
+      email: "",
       zip: "",
       state: ""
     }
@@ -29,19 +30,23 @@ class ContactForm extends Component {
         <h1>Sign up for our email list</h1>
         <div className="field">
           <label>First Name</label>
-          <input onChange={this.onChange} type="text" name="firstName" placeholder="First Name"/>
+          <input onChange={this.onChange} type="text" name="firstName" placeholder="First Name" title="Please Enter Valid First Name (Characters Only)" pattern="[a-zA-Z]*" required/>
         </div>
         <div className="field">
           <label>Last Name</label>
-          <input onChange={this.onChange} type="text" name="lastName" placeholder="Last Name"/>
+          <input onChange={this.onChange} type="text" name="lastName" title="Please Enter Valid Last Name (Characters, -, and ' Only)" placeholder="Last Name" pattern="[a-zA-Z'-]*" required/>
+        </div>
+        <div className="field">
+          <label>Email</label>
+          <input onChange={this.onChange} type="email" name="email" placeholder="Email Address" required/>
         </div>
         <div className="field">
           <label>Zip Code</label>
-          <input onChange={this.onChange} type="text" name="zip" placeholder="Zip Code"/>
+          <input onChange={this.onChange} type="text" name="zip" placeholder="Zip Code" title="Please Enter Valid US Zipcode" pattern="([0-9]{5,5})"/>
         </div>
         <div className="field">
           <label>State</label>
-          <select onChange={this.onChange} name="state" className="ui fluid dropdown">
+          <select onChange={this.onChange} name="state" className="ui fluid dropdown" required>
             <option value="">State</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>

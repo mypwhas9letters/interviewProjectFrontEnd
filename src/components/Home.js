@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NewsCard from './newsCard'
 
 class Home extends Component {
   constructor(props){
@@ -7,7 +8,8 @@ class Home extends Component {
     this.state = {
       videos: "",
       searchTerm: "",
-      link: `https://www.youtube.com/embed?listType=search&list=nba`
+      link: `https://www.youtube.com/embed?listType=search&list=nba`,
+      news: ""
     }
   }
 
@@ -23,7 +25,14 @@ class Home extends Component {
     })
   }
 
+  componentDidMount(){
+    fetch("https://newsapi.org/v2/top-headlines?sources=espn&apiKey=3ebd6d3dde004ab78b03260d588e97e1")
+    .then(res => res.json())
+    .then(json => this.setState({news: json.articles}))
+  }
+
   render(){
+    const newsList = this.state.news === "" ? null : this.state.news.map(news => <NewsCard news={news}/>)
     return(
       <div>
         <iframe id="player" type="text/html" width="100%" height="450" src={this.state.link} frameBorder="0"></iframe>
@@ -35,18 +44,25 @@ class Home extends Component {
 
         <div className="ui stackable divided grid">
           <div className="eight wide column">
-            <h4 className="ui header">Connect With Us</h4>
+            <h4 className="ui header">About Us</h4>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           </div>
           <div className="eight wide column">
-            <h4 className="ui header">Connect With Us</h4>
+            <h4 className="ui header">About Us</h4>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           </div>
         </div>
+
+        <h1>News Articles</h1>
+
+        <div className="ui three column grid">
+          {newsList}
+        </div>
+
       </div>
     )
   }

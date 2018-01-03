@@ -8,8 +8,8 @@ const Footer = () => {
         <div className="eight wide column">
           <h4 className="ui inverted header">Links</h4>
           <div className="ui inverted link list">
-            <a href="" className="item">Link One</a>
-            <a href="" className="item">Link Two</a>
+            <a href="" className="item">Home</a>
+            <a href="" className="item">Form</a>
             <a href="" className="item">Link Three</a>
             <a href="" className="item">Link Four</a>
           </div>
