@@ -16,7 +16,22 @@ const Footer = () => {
         </div>
         <div className="eight wide column">
           <h4 className="ui inverted header">Connect With Us</h4>
-          <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+            <button className="ui facebook button">
+              <i className="facebook icon"></i>
+              Facebook
+            </button>
+            <button className="ui twitter button">
+              <i className="twitter icon"></i>
+              Twitter
+            </button>
+            <button className="ui instagram button">
+              <i className="instagram icon"></i>
+              Instagram
+            </button>
+            <button className="ui youtube button">
+              <i className="youtube icon"></i>
+              YouTube
+            </button>
         </div>
       </div>
       <div className="ui horizontal inverted small divided link list">

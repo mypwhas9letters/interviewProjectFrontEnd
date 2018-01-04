@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div>
         <NavBar />
-        <div className="ui container homeMargin">
+        <div>
           <Route exact path='/' component={Home} />
           <Route exact path='/form' component={ContactForm} />
         </div>

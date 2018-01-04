@@ -1,11 +1,20 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 .homeMargin {
-  margin-top: 50px;
+  margin-top: 80px;
   margin-bottom: 20px;
+}
 
+.centered {
+  display: block;
+  margin: auto;
+  background-color: #cccccc;
+}
+
+.ytp-cued-thumbnail-overlay-image {
+  background-image: url("https://media.fox32chicago.com/media.fox32chicago.com/photo/2017/05/08/puppy_1494290952129_3280047_ver1.0_640_360.jpg");
 }

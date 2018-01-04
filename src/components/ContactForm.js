@@ -15,7 +15,6 @@ class ContactForm extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
-    console.log(this.state)
   }
 
   onChange = (event) => {
@@ -27,7 +26,7 @@ class ContactForm extends Component {
   render(){
     return(
       <form onSubmit={this.onSubmit} className="ui form">
-        <h1>Sign up for our email list</h1>
+        <h1>Join Our Mailing List</h1>
         <div className="field">
           <label>First Name</label>
           <input onChange={this.onChange} type="text" name="firstName" placeholder="First Name" title="Please Enter Valid First Name (Characters Only)" pattern="[a-zA-Z]*" required/>
