@@ -6,15 +6,29 @@ body {
 
 .homeMargin {
   margin-top: 80px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .centered {
   display: block;
   margin: auto;
   background-color: #cccccc;
+  margin-top: -314px;
+
 }
 
-.ytp-cued-thumbnail-overlay-image {
-  background-image: url("https://media.fox32chicago.com/media.fox32chicago.com/photo/2017/05/08/puppy_1494290952129_3280047_ver1.0_640_360.jpg");
+.newsMargin {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.youtubeCover {
+  background-color: black;
+  height: 450px;
+}
+
+.vidCover {
+  color: white;
+  text-align: center;
+  line-height: 300px;
 }

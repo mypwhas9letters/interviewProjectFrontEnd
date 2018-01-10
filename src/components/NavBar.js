@@ -14,7 +14,7 @@ const NavBar = () =>{
         </ NavLink>
         <div className="right menu">
           <NavLink className="ui item" to="/form">
-            Sign Up For Our Mailing List
+            Sign Up
           </ NavLink>
         </div>
       </div>

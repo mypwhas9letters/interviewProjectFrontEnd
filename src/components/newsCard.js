@@ -2,18 +2,15 @@ import React from 'react';
 
 const NewsCard = (news) =>{
   return(
-    <div className="ui card">
-      <div className="content">
-        {news.news.title}
-      </div>
+    <a href={news.news.url} className="ui centered card">
       <div className="image">
         <img src={news.news.urlToImage}/>
       </div>
       <div className="content">
-        <a className="header">{news.news.description}</a>
+        {news.news.title}
       </div>
-    </div>
+    </a>
   )
 }
 
-export default NewsCard
+export default NewsCard;
