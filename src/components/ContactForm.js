@@ -5,8 +5,8 @@ class ContactForm extends Component {
     super(props)
 
     this.state = {
-      firstName: "",
-      lastName: "",
+      first_name: "",
+      last_name: "",
       email: "",
       zip: "",
       state: ""
@@ -15,6 +15,16 @@ class ContactForm extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
+    const body = JSON.stringify(this.state)
+    return fetch("http://localhost:3000/users", {
+      method: 'post',
+      body: body,
+      headers: {
+        "Accept":"application/json",
+        "Content-Type":"application/json"
+      }
+    })
+      .then(() => this.props.history.push("/success"))
   }
 
   onChange = (event) => {
@@ -31,11 +41,11 @@ class ContactForm extends Component {
             <h1>Join Our Mailing List</h1>
             <div className="field">
               <label>First Name</label>
-              <input onChange={this.onChange} type="text" name="firstName" placeholder="First Name" title="Please Enter Valid First Name (Characters Only)" pattern="[a-zA-Z]*" required/>
+              <input onChange={this.onChange} type="text" name="first_name" placeholder="First Name" title="Please Enter Valid First Name (Characters Only)" pattern="[a-zA-Z]*" required/>
             </div>
             <div className="field">
               <label>Last Name</label>
-              <input onChange={this.onChange} type="text" name="lastName" title="Please Enter Valid Last Name (Characters, -, and ' Only)" placeholder="Last Name" pattern="[a-zA-Z'-]*" required/>
+              <input onChange={this.onChange} type="text" name="last_name" title="Please Enter Valid Last Name (Characters, -, and ' Only)" placeholder="Last Name" pattern="[a-zA-Z'-]*" required/>
             </div>
             <div className="field">
               <label>Email</label>
