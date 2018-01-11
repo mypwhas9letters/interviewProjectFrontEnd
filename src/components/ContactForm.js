@@ -16,7 +16,7 @@ class ContactForm extends Component {
   onSubmit = (event) => {
     event.preventDefault()
     const body = JSON.stringify(this.state)
-    return fetch("http://localhost:3000/users", {
+    return fetch("https://sportsnewsback.herokuapp.com/users", {
       method: 'post',
       body: body,
       headers: {
