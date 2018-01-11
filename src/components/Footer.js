@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return(
@@ -8,10 +9,10 @@ const Footer = () => {
         <div className="eight wide column">
           <h4 className="ui inverted header">Links</h4>
           <div className="ui inverted link list">
-            <a href="" className="item">Home</a>
-            <a href="" className="item">Form</a>
-            <a href="" className="item">Link Three</a>
-            <a href="" className="item">Link Four</a>
+            <NavLink className="item" to="/">Home</ NavLink>
+            <NavLink className="item" to="/form">Form</ NavLink>
+            <NavLink className="item" to="/">Link</ NavLink>
+            <NavLink className="item" to="/">Link</ NavLink>
           </div>
         </div>
         <div className="eight wide column">
@@ -35,10 +36,10 @@ const Footer = () => {
         </div>
       </div>
       <div className="ui horizontal inverted small divided link list">
-        <a className="item" href="">Site Map</a>
-        <a className="item" href="">Contact Us</a>
-        <a className="item" href="">Terms and Conditions</a>
-        <a className="item" href="">Privacy Policy</a>
+        <NavLink className="item" to="/">Site Map</ NavLink>
+        <NavLink className="item" to="/">Contact Us</ NavLink>
+        <NavLink className="item" to="/">Terms and Conditions</ NavLink>
+        <NavLink className="item" to="/">Privacy Policy</ NavLink>
       </div>
     </div>
   </div>

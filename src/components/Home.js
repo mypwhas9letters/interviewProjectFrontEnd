@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import NewsSection from './newsSection';
+
 import AboutMe from './AboutMe';
+import NewsSection from './newsSection';
 
 class Home extends Component {
   constructor(props){
@@ -13,68 +14,60 @@ class Home extends Component {
     }
   }
 
-  onChange = (event) => {
+  onChangeSearchBar = (event) => {
     this.setState({
       searchTerm: event.target.value
-    })
+    });
   }
 
-  onClick = (event) => {
+  onClickSearchYoutube = (event) => {
     this.setState({
       link: `https://www.youtube.com/embed?listType=search&list=${this.state.searchTerm}`,
-      searchTerm: null,
+      searchTerm: "",
       video: true
     })
   }
 
   videoOnClick = (event) => {
-    this.setState({video: !this.state.video})
+    this.setState({video: !this.state.video});
   }
 
   render(){
     return(
-      <div className="homeMargin">
-        <div className="youtubeCover" onClick={this.videoOnClick}>
-          <div className="vidCover">
-            <div>
-              <h1 style={{color: "white", display: "inline-block"}}>Test</h1>
-
-            <button className="ui huge blue basic button">
-              Play Video
+      <div className="homePageMargin">
+        <div className="videoBackground" onClick={this.videoOnClick}>
+          <div className="playVideoButton">
+            <button className="ui huge primary button">
+              Play Video Of The Day
             </button>
-            </div>
           </div>
-          {this.state.video ? <iframe className="cover centered" id="player" type="text/html" width="75%" height="450" src={this.state.link} frameBorder="0" title={this.state.link}></iframe> : null }
+          {this.state.video ? <iframe className="iframeStyling" id="player" type="text/html" width="75%" height="450" src={this.state.link} frameBorder="0" title={this.state.link}></iframe> : null }
         </div>
 
         <div className="ui container">
-
           <div className="searchBarStyle">
             <div className="ui form">
               <div className="inline fields">
                 <div className="three wide field">
                 </div>
                 <div className="ten wide field">
-                  <input onChange={this.onChange} type="text" placeholder="Youtube..." />
-                    <div className="ui submit primary button" onClick={this.onClick}>Search</div>
-                  </div>
+                  <input onChange={this.onChangeSearchBar} type="text" placeholder="Seach Youtube..." value={this.state.searchTerm} />
+                  <div className="ui submit primary button" onClick={this.onClickSearchYoutube}>Search</div>
                 </div>
+              </div>
             </div>
           </div>
 
-          <div className="sections1">
-            <h1 className="ui horizontal divider header">About The Company</h1><br/>
-            <AboutMe /><br/>
-          </div>
-
           <div>
+            <h1 className="ui horizontal divider header">About The Company</h1>
+            <AboutMe />
             <h1 className="ui horizontal divider header">Sports News</h1>
             <NewsSection />
           </div>
-        </div>
 
+        </div>
       </div>
-    )
+    );
   }
 }
 

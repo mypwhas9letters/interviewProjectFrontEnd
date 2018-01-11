@@ -7,10 +7,10 @@ const NewsCard = (news) =>{
         <img src={news.news.urlToImage} alt=""/>
       </div>
       <div className="content">
-        {news.news.title}
+        <h3>{news.news.title}</h3>
       </div>
     </a>
-  )
+  );
 }
 
 export default NewsCard;

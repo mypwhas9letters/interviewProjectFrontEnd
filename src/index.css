@@ -1,47 +1,63 @@
 body {
-  margin: 0;
-  padding: 0;
   font-family: 'Oswald', sans-serif;
-}
-
-.homeMargin {
-  margin-top: 76px;
-  margin-bottom: 30px;
-}
-
-.centered {
-  display: block;
-  margin: auto;
-  background-color: #cccccc;
-  margin-top: -450px;
-}
-
-.newsMargin {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.youtubeCover {
-  background-color: black;
-  height: 450px;
-}
-
-.vidCover {
-  text-align: center;
-  line-height: 450px;
-}
-
-.searchBarStyle {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
 }
 
 h1 {
   font-family: 'Shrikhand', cursive;
 }
 
-.sections1 {
+/* Home Page */
+.homePageMargin {
+  margin-top: 62px;
+  margin-bottom: 40px;
+}
+
+.videoBackground {
+  background-image: url("./images/background.jpg");
+  height: 450px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #1B1C1D;
+}
+
+.playVideoButton {
+  text-align: center;
+  line-height: 450px;
+}
+
+.iframeStyling {
+  display: block;
+  margin: auto;
+  background-color: #cccccc;
+  margin-top: -450px;
+}
+
+.searchBarStyle {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.ui.horizontal.divider {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* News */
+.newsMargin {
+  margin-bottom: 30px;
+}
+
+.nextPrevButtons {
+  text-align: center;
+}
+
+/* Form */
+.formMargin {
+  margin-top: 90px;
+  margin-bottom: 40px;
+}
+
+.pushFooterToTheBottom {
+  min-height: 100vh;
 }
