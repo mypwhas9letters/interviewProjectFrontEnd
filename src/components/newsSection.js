@@ -32,7 +32,7 @@ class NewsSection extends Component {
       slidesToScroll: 3,
       responsive: [ { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1} }, { breakpoint: 992, settings: { slidesToShow: 2, slidesToScroll: 2 } }]
     };
-    const newsList = this.state.news === "" ? null : this.state.news.map(news => <div className="newsMargin"><NewsCard news={news} key={news.title}/></div>)
+    const newsList = this.state.news === "" ? null : this.state.news.map(news => <div className="newsMargin" key={news.title}><NewsCard news={news} /></div>)
     return(
       <div>
         <Slider ref={c => this.slider = c } {...settings}>

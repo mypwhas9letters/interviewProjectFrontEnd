@@ -21,7 +21,9 @@ class Home extends Component {
 
   onClick = (event) => {
     this.setState({
-      link: `https://www.youtube.com/embed?listType=search&list=${this.state.searchTerm}`
+      link: `https://www.youtube.com/embed?listType=search&list=${this.state.searchTerm}`,
+      searchTerm: null,
+      video: true
     })
   }
 
@@ -32,25 +34,41 @@ class Home extends Component {
   render(){
     return(
       <div className="homeMargin">
-        <div class="youtubeCover" onClick={this.videoOnClick}>
-          <h1 className="vidCover">Top Videos</h1>
-          {this.state.video ? <iframe className="cover centered" id="player" type="text/html" width="75%" height="450" src={this.state.link} frameBorder="0"></iframe> : null }
+        <div className="youtubeCover" onClick={this.videoOnClick}>
+          <div className="vidCover">
+            <div>
+              <h1 style={{color: "white", display: "inline-block"}}>Test</h1>
+
+            <button className="ui huge blue basic button">
+              Play Video
+            </button>
+            </div>
+          </div>
+          {this.state.video ? <iframe className="cover centered" id="player" type="text/html" width="75%" height="450" src={this.state.link} frameBorder="0" title={this.state.link}></iframe> : null }
         </div>
 
         <div className="ui container">
-          <div>
-            <label>Search Youtube</label>
-            <input onChange={this.onChange} type="text" placeholder="Search..." />
-            <button className="ui primary button" onClick={this.onClick}>Search</button>
+
+          <div className="searchBarStyle">
+            <div className="ui form">
+              <div className="inline fields">
+                <div className="three wide field">
+                </div>
+                <div className="ten wide field">
+                  <input onChange={this.onChange} type="text" placeholder="Youtube..." />
+                    <div className="ui submit primary button" onClick={this.onClick}>Search</div>
+                  </div>
+                </div>
+            </div>
           </div>
 
-          <div>
-            <h2 class="ui horizontal divider header">About The Company</h2><br/>
+          <div className="sections1">
+            <h1 className="ui horizontal divider header">About The Company</h1><br/>
             <AboutMe /><br/>
           </div>
 
           <div>
-            <h2 class="ui horizontal divider header">Sports News</h2>
+            <h1 className="ui horizontal divider header">Sports News</h1>
             <NewsSection />
           </div>
         </div>

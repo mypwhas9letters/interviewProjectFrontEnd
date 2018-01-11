@@ -5,7 +5,7 @@ body {
 }
 
 .homeMargin {
-  margin-top: 80px;
+  margin-top: 76px;
   margin-bottom: 30px;
 }
 
@@ -13,8 +13,7 @@ body {
   display: block;
   margin: auto;
   background-color: #cccccc;
-  margin-top: -314px;
-
+  margin-top: -450px;
 }
 
 .newsMargin {
@@ -28,7 +27,21 @@ body {
 }
 
 .vidCover {
-  color: white;
   text-align: center;
-  line-height: 300px;
+  line-height: 450px;
+}
+
+.searchBarStyle {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Shrikhand', cursive;
+}
+
+.sections1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
